@@ -1,10 +1,4 @@
-# Prediction-of-Internet-Use-Kaggle-Compeititon (A3)
-Project A3: Prediction of Internet Use
-Here’s a **well-structured README** for your project repository on GitHub, ensuring clarity and engagement for readers.
-
----
-
-# **Predicting Problematic Internet Usage in Children and Adolescents**
+# **Predicting Problematic Internet Usage in Children and Adolescents (A3)**
 **Kaggle Competition | Severity Impairment Index (SII)**
 
 ---
