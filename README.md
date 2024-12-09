@@ -74,7 +74,7 @@ This repository covers the full data science pipeline, from **Exploratory Data A
 - Older adolescents (\textbf{14–17 years}) have the highest SII levels.  
 - Teens spending **3+ hours/day** online exhibit severe problematic internet use.  
 - **BMI** and internet usage hours are positively correlated with SII.  
-- Mental health scores (\textbf{CGAS}) decline significantly with SII severity.
+- Mental health scores decline significantly with SII severity.
 
 ---
 
