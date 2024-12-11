@@ -32,12 +32,15 @@ This repository is organized into the following structure:
 │-- data/
 │   ├── train.csv                # Training dataset
 │   ├── test.csv                 # Test dataset
+│   ├── data_dictionary.csv      # Description of all dataset fields
 │-- notebooks/
 │   ├── HMS_Data_Visualization.ipynb       # Detailed data visualization
 │   ├── complete-eda-ml-model.ipynb        # EDA and model training pipeline
 │   ├── complete-eda-and-visualization-for-csv-files.ipynb   # EDA for CSV datasets
 │-- results/
 │   ├── plots/                   # All generated visualizations
+│-- reports/
+│   ├── A3_report.pdf            # Initial project plan (Team A3)
 │-- README.md                    # Project documentation (this file)
 │-- requirements.txt             # Required Python libraries
 │-- LICENSE                      # License information
@@ -93,6 +96,10 @@ Execute each notebook in order to reproduce the results. Outputs (plots, results
 - **Visualizations**:  
   - Correlation heatmaps for children and teens.  
   - Detailed plots illustrating age groups, internet usage hours, and SII severity.  
+
+---
+## **Project Plan** 
+The initial project plan is available in the reports/A3_report.pdf file. This document outlines the project objectives, milestones, and methodologies. Note that there is a lot of differences between the original plan and what was achieved at the end.
 
 ---
 
