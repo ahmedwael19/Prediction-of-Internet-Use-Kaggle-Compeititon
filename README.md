@@ -1,96 +1,121 @@
-# **Predicting Problematic Internet Usage in Children and Adolescents (A3)**
-**Kaggle Competition | Severity Impairment Index (SII)**
+# **Predicting Problematic Internet Usage in Children and Adolescents**  
+**University of Tartu | Intro to Data Science Course Project | A3**  
 
 ---
 
-## **Project Overview**
-This project was conducted as part of the Intro to Data Science course at the University of Tartu, Institute of Computer Science. The goal is to analyze and predict the level of problematic internet usage among children and adolescents using physical, demographic, and behavioral data.
+## **Project Overview**  
+This project was conducted as part of the **Intro to Data Science** course at the **University of Tartu, Institute of Computer Science**.  
 
-The target variable, **Severity Impairment Index (SII),** is derived from a 20-question survey that measures internet addiction severity.
+**Author**:  
+- **Ahmed Wael**  
 
-This repository covers the full data science pipeline, from **Exploratory Data Analysis (EDA)** to advanced **Machine Learning modeling** with **AutoML** tools.
-
-
-
----
-
-## **Dataset**
-- **Source**: Kaggle competition: [Child Mind Institute - Problematic Internet Use](https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use/)
-- **Records**: 3,960 samples
-- **Features**: 82 columns, including:
-  - **Demographics**: Age, sex, enrollment season  
-  - **Internet Usage**: Daily hours spent online  
-  - **Physical Measures**: BMI, endurance scores, heart rate  
-  - **Behavioral Data**: SII derived from survey responses  
-
-### Dataset Challenges
-1. **Ambiguous zeros in SII**: Representing valid "no impairment" and missing values.  
-2. **Inconsistent calculations**: Errors in survey-derived scores.  
-
-### Fix:
-- Recalculated **SII values** from raw survey responses.  
-- Performed **informed imputation** for missing SII data.  
+**Goal**: To analyze and predict problematic internet usage severity (measured by the **Severity Impairment Index (SII)**) among children and adolescents, using physical, demographic, and behavioral data.  
 
 ---
 
-## **Project Goals**
-1. **Understand Patterns**: Analyze relationships between physical activity, mental health, and internet addiction.  
-2. **Build Predictive Models**: Train models to predict SII levels using behavioral and physical activity data.  
-3. **Achieve Competitive Results**: Rank in the top 15% of the Kaggle competition leaderboard.  
+## **Motivation**  
+Problematic internet use is a growing concern, particularly among children and adolescents, as it is linked to:  
+- **Mental health issues**: depression, anxiety, and declining emotional well-being.  
+- **Physical consequences**: reduced activity, poor posture, and unhealthy habits.  
+
+This project aims to leverage **accessible physical activity and behavioral data** to:  
+- Understand the behaviors associated with problematic internet use.  
+- Predict SII severity for early intervention.  
 
 ---
 
-## **Data Science Pipeline**
-1. **Data Cleaning and Feature Engineering**  
-   - Recalculated SII scores and fixed missing data.  
-   - Corrected BMI errors using height and weight.  
-   - Removed highly correlated features using **Hierarchical Clustering**.
+## **Repository Contents**  
+This repository is organized into the following structure:  
 
-2. **Exploratory Data Analysis (EDA)**  
-   Key questions addressed:
-   - Do older children exhibit higher addiction levels?
-   - How do mental health scores vary with SII severity?
-   - Do younger children exhibit addiction-like behaviors when restricted from internet use?  
-   - Which features correlate most with SII and internet hours?
-
-3. **Model Training**  
-   - Built separate models for **Children (5–14 years)** and **Teens (15–22 years)**.  
-   - Combined predictions for the final results.  
-   - Automated Hyperparameter Tuning using:  
-     - **Hyperopt**  
-     - **TPOT**  
-     - **H2O AutoML**  
-
-   **Metric Used**: Quadratic Weighted Kappa (QWK)
-
-4. **Evaluation**  
-   - Achieved a QWK score of **0.347** on the public leaderboard.  
-   - Positioned at **2312 out of 3180** (continuously improving).  
-
+```plaintext
+📁 Prediction-of-Internet-Use-Kaggle-Competition/
+│-- data/
+│   ├── train.csv                # Training dataset
+│   ├── test.csv                 # Test dataset
+│-- notebooks/
+│   ├── HMS_Data_Visualization.ipynb       # Detailed data visualization
+│   ├── complete-eda-ml-model.ipynb        # EDA and model training pipeline
+│   ├── complete-eda-and-visualization-for-csv-files.ipynb   # EDA for CSV datasets
+│-- results/
+│   ├── plots/                   # All generated visualizations
+│-- README.md                    # Project documentation (this file)
+│-- requirements.txt             # Required Python libraries
+│-- LICENSE                      # License information
+```
 
 ---
 
-## **Key Results**
-- Older adolescents (\textbf{14–17 years}) have the highest SII levels.  
-- Teens spending **3+ hours/day** online exhibit severe problematic internet use.  
-- **BMI** and internet usage hours are positively correlated with SII.  
-- Mental health scores decline significantly with SII severity.
+## **How to Reproduce the Analysis**  
+
+### 1. Clone the Repository  
+```bash
+git clone https://github.com/ahmedwael19/Prediction-of-Internet-Use-Kaggle-Compeititon.git
+cd Prediction-of-Internet-Use-Kaggle-Competition
+```
+
+### 2. Set Up the Environment  
+Install the necessary libraries using `requirements.txt`:  
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Data Preparation  
+Ensure the datasets (`train.csv` and `test.csv`) are placed in the `data/` folder.  
+
+### 4. Run the Notebooks  
+The analysis and modeling pipeline is split into three main notebooks:  
+1. **`HMS_Data_Visualization.ipynb`**: Detailed exploration and visualization of the data.  
+2. **`complete-eda-ml-model.ipynb`**: Full EDA, preprocessing, feature engineering, and machine learning pipeline.  
+3. **`complete-eda-and-visualization-for-csv-files.ipynb`**: Focused EDA on raw CSV data.  
+
+Execute each notebook in order to reproduce the results. Outputs (plots, results, etc.) will be saved in the `results/` folder.  
 
 ---
 
-## **Tools and Libraries**
-- **Python** (3.8+)
-- **Pandas**, **NumPy**
-- **Matplotlib**, **Seaborn**
+## **Project Highlights**  
+
+- **Data Cleaning and Preprocessing**:  
+  - Fixed **missing values** and recalculated ambiguous SII scores.  
+  - Corrected errors in BMI and handled outliers using the **IQR method**.  
+  - Removed highly correlated features (>90%) using **hierarchical clustering**.  
+
+- **Key Insights from EDA**:  
+  - Older adolescents (\textbf{14–17 years}) show the highest SII severity.  
+  - Mental health scores (CGAS) decline with increasing SII severity.  
+  - Younger children display addiction-like behaviors even when restricted from internet use.  
+  - Internet preoccupation and frustration correlate strongly with SII levels.  
+
+- **Modeling Approach**:  
+  - Separate models were trained for **children** and **teens** to account for age-specific patterns.  
+  - Combined predictions from both models to optimize performance.  
+  - The best model achieved a **Quadratic Weighted Kappa (QWK)** score of 0.347  
+
+- **Visualizations**:  
+  - Correlation heatmaps for children and teens.  
+  - Detailed plots illustrating age groups, internet usage hours, and SII severity.  
+
+---
+
+## **Results**  
+- Final visualizations and analysis outputs are saved in the **`results/plots`** folder.  
+
+---
+
+## **Tools and Libraries**  
+- **Python 3.8+**  
+- **Pandas**, **NumPy**  
+- **Matplotlib**, **Seaborn**  
 - **Scikit-learn**  
-- **TPOT**, **Hyperopt**, **H2O AutoML**  
+- **TPOT**, **H2O**, **Hyperopt**  
+
+---
 
 ## **Acknowledgments**
-Special thanks to my ML project teammates **Anton Vykhovanets** and **Andres Sebastian** for their contributions and support.  
+Thanks to my ML project teammates **Anton Vykhovanets** and **Andres Sebastian** @pinkfloydsito for their contributions and support.  
 Data provided by the **Healthy Brain Network** in collaboration with the **Child Mind Institute** and Kaggle.
 This project was completed as part of the **Intro to Data Science course** at the **University of Tartu**, **Institute of Computer Science**.
 
 ---
 
-## **License**
+## **License**  
 This project is licensed under the MIT License.  
