@@ -1,0 +1,28 @@
+# Core Libraries
+numpy==1.23.5
+pandas==1.5.3
+
+# Visualization
+matplotlib==3.6.2
+seaborn==0.12.2
+
+# Machine Learning and AutoML
+scikit-learn==1.2.1
+tpot==0.11.7
+h2o==3.38.0.4
+hyperopt==0.2.7
+
+# Notebook Environment
+jupyterlab==3.6.1
+ipykernel==6.21.0
+
+# Statistical and Data Processing
+scipy==1.9.3
+statsmodels==0.13.5
+
+# Hierarchical Clustering and Others
+fastcluster==1.2.6
+
+# Plot Saving Utilities
+Pillow==9.3.0
+
